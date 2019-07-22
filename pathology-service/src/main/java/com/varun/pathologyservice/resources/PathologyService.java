@@ -1,6 +1,7 @@
 package com.varun.pathologyservice.resources;
 
 import com.varun.pathologyservice.model.Disease;
+import com.varun.pathologyservice.model.DiseaseList;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,8 +19,10 @@ public class PathologyService {
     );
 
     @RequestMapping("/diseases")
-    private List<Disease> getDiseases() {
-        return diseases;
+    private DiseaseList getDiseases() {
+        DiseaseList diseaseList = new DiseaseList();
+        diseaseList.setDiseases(diseases);
+        return diseaseList;
     }
 
     @RequestMapping("/diseases/{id}")

@@ -1,4 +1,4 @@
-package com.varun.pathologyservice.model;
+package com.varun.admissionsservice.model;
 
 public class Disease {
     private String id;

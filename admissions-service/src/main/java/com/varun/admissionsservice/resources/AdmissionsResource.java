@@ -1,5 +1,6 @@
 package com.varun.admissionsservice.resources;
 
+import com.varun.admissionsservice.model.DiseaseList;
 import com.varun.admissionsservice.model.EmployeesList;
 import com.varun.admissionsservice.model.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,13 @@ public class AdmissionsResource {
         EmployeesList employeesList =
                 restTemplate.getForObject("http://localhost:8082/hr/employees", EmployeesList.class);
         return employeesList;
+    }
+
+    @RequestMapping("/diseases")
+    public DiseaseList getDiseases() {
+        DiseaseList diseaseList =
+                restTemplate.getForObject("http://localhost:8083/pathology/diseases", DiseaseList.class);
+        return diseaseList;
     }
 
     @RequestMapping("/patients")

@@ -1,4 +1,4 @@
-package com.varun.hrservice.model;
+package com.varun.admissionsservice.model;
 
 public class Employee {
     private String id;

@@ -1,6 +1,7 @@
 package com.varun.hrservice.resources;
 
 import com.varun.hrservice.model.Employee;
+import com.varun.hrservice.model.EmployeesList;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,8 +20,10 @@ public class HrResources {
     );
 
     @RequestMapping("/employees")
-    public List<Employee> getEmployees() {
-        return employees;
+    public EmployeesList getEmployees() {
+        EmployeesList employeesList = new EmployeesList();
+        employeesList.setEmployees(employees);
+        return employeesList;
     }
 
     @RequestMapping("/employees/{id}")
